@@ -32,10 +32,14 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/TerritorialCommunitynew_1.js"></script>
-        <script src="data/Regionnew_2.js"></script>
-        <script src="data/DRDSI_UA_Districts_3.js"></script>
-        <script src="data/DRDSI_UA_Village_Councils_4.js"></script>
+        <script src="data/Regionnewpopulation_3.js"></script>
+        <script src="data/Regionnewsquare_4.js"></script>
+        <script src="data/Regionnew_5.js"></script>
+        <script src="data/TerritorialCommunitynewpopulation_6.js"></script>
+        <script src="data/TerritorialCommunitynewsquare_7.js"></script>
+        <script src="data/TerritorialCommunitynew_8.js"></script>
+        <script src="data/DRDSI_UA_Districts_9.js"></script>
+        <script src="data/DRDSI_UA_Village_Councils_10.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -62,7 +66,253 @@
         });
         layer_OpenStreetMap_0;
         map.addLayer(layer_OpenStreetMap_0);
-        function pop_TerritorialCommunitynew_1(feature, layer) {
+        map.createPane('pane_GoogleMaps_1');
+        map.getPane('pane_GoogleMaps_1').style.zIndex = 401;
+        var layer_GoogleMaps_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleMaps_1',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_GoogleMaps_1;
+        map.createPane('pane_GoogleSatelliteHybrid_2');
+        map.getPane('pane_GoogleSatelliteHybrid_2').style.zIndex = 402;
+        var layer_GoogleSatelliteHybrid_2 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatelliteHybrid_2',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_GoogleSatelliteHybrid_2;
+        function pop_Regionnewpopulation_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ADMIN_1</th>\
+                        <td>' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ADMIN_2</th>\
+                        <td>' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">square</th>\
+                        <td>' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">population</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Regionnewpopulation_3_0(feature) {
+            if (feature.properties['population'] >= 147973.000000 && feature.properties['population'] <= 182564.333333 ) {
+                return {
+                pane: 'pane_Regionnewpopulation_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(87,235,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 182564.333333 && feature.properties['population'] <= 202989.666667 ) {
+                return {
+                pane: 'pane_Regionnewpopulation_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,135,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 202989.666667 && feature.properties['population'] <= 209249.000000 ) {
+                return {
+                pane: 'pane_Regionnewpopulation_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,34,255,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_Regionnewpopulation_3');
+        map.getPane('pane_Regionnewpopulation_3').style.zIndex = 403;
+        map.getPane('pane_Regionnewpopulation_3').style['mix-blend-mode'] = 'normal';
+        var layer_Regionnewpopulation_3 = new L.geoJson(json_Regionnewpopulation_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Regionnewpopulation_3',
+            layerName: 'layer_Regionnewpopulation_3',
+            pane: 'pane_Regionnewpopulation_3',
+            onEachFeature: pop_Regionnewpopulation_3,
+            style: style_Regionnewpopulation_3_0,
+        });
+        bounds_group.addLayer(layer_Regionnewpopulation_3);
+        function pop_Regionnewsquare_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ADMIN_1</th>\
+                        <td>' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">ADMIN_2</th>\
+                        <td>' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">square</th>\
+                        <td>' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">population</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Regionnewsquare_4_0(feature) {
+            if (feature.properties['square'] >= 3237.400000 && feature.properties['square'] <= 3990.933333 ) {
+                return {
+                pane: 'pane_Regionnewsquare_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,215,238,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['square'] >= 3990.933333 && feature.properties['square'] <= 4408.400000 ) {
+                return {
+                pane: 'pane_Regionnewsquare_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,108,121,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['square'] >= 4408.400000 && feature.properties['square'] <= 4489.800000 ) {
+                return {
+                pane: 'pane_Regionnewsquare_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(180,0,3,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_Regionnewsquare_4');
+        map.getPane('pane_Regionnewsquare_4').style.zIndex = 404;
+        map.getPane('pane_Regionnewsquare_4').style['mix-blend-mode'] = 'normal';
+        var layer_Regionnewsquare_4 = new L.geoJson(json_Regionnewsquare_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Regionnewsquare_4',
+            layerName: 'layer_Regionnewsquare_4',
+            pane: 'pane_Regionnewsquare_4',
+            onEachFeature: pop_Regionnewsquare_4,
+            style: style_Regionnewsquare_4_0,
+        });
+        bounds_group.addLayer(layer_Regionnewsquare_4);
+        function pop_Regionnew_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Regionnew_5_0() {
+            return {
+                pane: 'pane_Regionnew_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(131,183,255,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Regionnew_5');
+        map.getPane('pane_Regionnew_5').style.zIndex = 405;
+        map.getPane('pane_Regionnew_5').style['mix-blend-mode'] = 'normal';
+        var layer_Regionnew_5 = new L.geoJson(json_Regionnew_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Regionnew_5',
+            layerName: 'layer_Regionnew_5',
+            pane: 'pane_Regionnew_5',
+            onEachFeature: pop_Regionnew_5,
+            style: style_Regionnew_5_0,
+        });
+        bounds_group.addLayer(layer_Regionnew_5);
+        map.addLayer(layer_Regionnew_5);
+        function pop_TerritorialCommunitynewpopulation_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -88,13 +338,22 @@
                         <th scope="row">KOATUU_old</th>\
                         <td>' + (feature.properties['KOATUU_old'] !== null ? autolinker.link(feature.properties['KOATUU_old'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">square</th>\
+                        <td>' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">population</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_TerritorialCommunitynew_1_0() {
-            return {
-                pane: 'pane_TerritorialCommunitynew_1',
+        function style_TerritorialCommunitynewpopulation_6_0(feature) {
+            if (feature.properties['population'] >= 0.000000 && feature.properties['population'] <= 5063.000000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewpopulation_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -103,24 +362,85 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(190,178,151,1.0)',
+                fillColor: 'rgba(206,228,255,1.0)',
                 interactive: true,
             }
+            }
+            if (feature.properties['population'] >= 5063.000000 && feature.properties['population'] <= 8056.000000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewpopulation_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(155,189,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 8056.000000 && feature.properties['population'] <= 13744.600000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewpopulation_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(103,150,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 13744.600000 && feature.properties['population'] <= 24450.800000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewpopulation_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,111,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 24450.800000 && feature.properties['population'] <= 70731.000000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewpopulation_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,72,255,1.0)',
+                interactive: true,
+            }
+            }
         }
-        map.createPane('pane_TerritorialCommunitynew_1');
-        map.getPane('pane_TerritorialCommunitynew_1').style.zIndex = 401;
-        map.getPane('pane_TerritorialCommunitynew_1').style['mix-blend-mode'] = 'normal';
-        var layer_TerritorialCommunitynew_1 = new L.geoJson(json_TerritorialCommunitynew_1, {
+        map.createPane('pane_TerritorialCommunitynewpopulation_6');
+        map.getPane('pane_TerritorialCommunitynewpopulation_6').style.zIndex = 406;
+        map.getPane('pane_TerritorialCommunitynewpopulation_6').style['mix-blend-mode'] = 'normal';
+        var layer_TerritorialCommunitynewpopulation_6 = new L.geoJson(json_TerritorialCommunitynewpopulation_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_TerritorialCommunitynew_1',
-            layerName: 'layer_TerritorialCommunitynew_1',
-            pane: 'pane_TerritorialCommunitynew_1',
-            onEachFeature: pop_TerritorialCommunitynew_1,
-            style: style_TerritorialCommunitynew_1_0,
+            dataVar: 'json_TerritorialCommunitynewpopulation_6',
+            layerName: 'layer_TerritorialCommunitynewpopulation_6',
+            pane: 'pane_TerritorialCommunitynewpopulation_6',
+            onEachFeature: pop_TerritorialCommunitynewpopulation_6,
+            style: style_TerritorialCommunitynewpopulation_6_0,
         });
-        bounds_group.addLayer(layer_TerritorialCommunitynew_1);
-        function pop_Regionnew_2(feature, layer) {
+        bounds_group.addLayer(layer_TerritorialCommunitynewpopulation_6);
+        function pop_TerritorialCommunitynewsquare_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">fid</th>\
@@ -134,13 +454,34 @@
                         <th scope="row">ADMIN_2</th>\
                         <td>' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">ADMIN_3</th>\
+                        <td>' + (feature.properties['ADMIN_3'] !== null ? autolinker.link(feature.properties['ADMIN_3'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">TYPE</th>\
+                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KOATUU_old</th>\
+                        <td>' + (feature.properties['KOATUU_old'] !== null ? autolinker.link(feature.properties['KOATUU_old'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">square</th>\
+                        <td>' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">population</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Regionnew_2_0() {
-            return {
-                pane: 'pane_Regionnew_2',
+        function style_TerritorialCommunitynewsquare_7_0(feature) {
+            if (feature.properties['square'] >= 0.000000 && feature.properties['square'] <= 119.280000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewsquare_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -149,25 +490,144 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(232,113,141,1.0)',
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['square'] >= 119.280000 && feature.properties['square'] <= 274.420000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewsquare_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,191,191,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['square'] >= 274.420000 && feature.properties['square'] <= 302.680000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewsquare_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,128,128,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['square'] >= 302.680000 && feature.properties['square'] <= 562.540000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewsquare_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,64,64,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['square'] >= 562.540000 && feature.properties['square'] <= 995.100000 ) {
+                return {
+                pane: 'pane_TerritorialCommunitynewsquare_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_TerritorialCommunitynewsquare_7');
+        map.getPane('pane_TerritorialCommunitynewsquare_7').style.zIndex = 407;
+        map.getPane('pane_TerritorialCommunitynewsquare_7').style['mix-blend-mode'] = 'normal';
+        var layer_TerritorialCommunitynewsquare_7 = new L.geoJson(json_TerritorialCommunitynewsquare_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TerritorialCommunitynewsquare_7',
+            layerName: 'layer_TerritorialCommunitynewsquare_7',
+            pane: 'pane_TerritorialCommunitynewsquare_7',
+            onEachFeature: pop_TerritorialCommunitynewsquare_7,
+            style: style_TerritorialCommunitynewsquare_7_0,
+        });
+        bounds_group.addLayer(layer_TerritorialCommunitynewsquare_7);
+        function pop_TerritorialCommunitynew_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_3'] !== null ? autolinker.link(feature.properties['ADMIN_3'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['KOATUU_old'] !== null ? autolinker.link(feature.properties['KOATUU_old'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TerritorialCommunitynew_8_0() {
+            return {
+                pane: 'pane_TerritorialCommunitynew_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,166,178,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Regionnew_2');
-        map.getPane('pane_Regionnew_2').style.zIndex = 402;
-        map.getPane('pane_Regionnew_2').style['mix-blend-mode'] = 'normal';
-        var layer_Regionnew_2 = new L.geoJson(json_Regionnew_2, {
+        map.createPane('pane_TerritorialCommunitynew_8');
+        map.getPane('pane_TerritorialCommunitynew_8').style.zIndex = 408;
+        map.getPane('pane_TerritorialCommunitynew_8').style['mix-blend-mode'] = 'normal';
+        var layer_TerritorialCommunitynew_8 = new L.geoJson(json_TerritorialCommunitynew_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Regionnew_2',
-            layerName: 'layer_Regionnew_2',
-            pane: 'pane_Regionnew_2',
-            onEachFeature: pop_Regionnew_2,
-            style: style_Regionnew_2_0,
+            dataVar: 'json_TerritorialCommunitynew_8',
+            layerName: 'layer_TerritorialCommunitynew_8',
+            pane: 'pane_TerritorialCommunitynew_8',
+            onEachFeature: pop_TerritorialCommunitynew_8,
+            style: style_TerritorialCommunitynew_8_0,
         });
-        bounds_group.addLayer(layer_Regionnew_2);
-        map.addLayer(layer_Regionnew_2);
-        function pop_DRDSI_UA_Districts_3(feature, layer) {
+        bounds_group.addLayer(layer_TerritorialCommunitynew_8);
+        map.addLayer(layer_TerritorialCommunitynew_8);
+        function pop_DRDSI_UA_Districts_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">UkrName</th>\
@@ -193,9 +653,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DRDSI_UA_Districts_3_0() {
+        function style_DRDSI_UA_Districts_9_0() {
             return {
-                pane: 'pane_DRDSI_UA_Districts_3',
+                pane: 'pane_DRDSI_UA_Districts_9',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -208,20 +668,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_DRDSI_UA_Districts_3');
-        map.getPane('pane_DRDSI_UA_Districts_3').style.zIndex = 403;
-        map.getPane('pane_DRDSI_UA_Districts_3').style['mix-blend-mode'] = 'normal';
-        var layer_DRDSI_UA_Districts_3 = new L.geoJson(json_DRDSI_UA_Districts_3, {
+        map.createPane('pane_DRDSI_UA_Districts_9');
+        map.getPane('pane_DRDSI_UA_Districts_9').style.zIndex = 409;
+        map.getPane('pane_DRDSI_UA_Districts_9').style['mix-blend-mode'] = 'normal';
+        var layer_DRDSI_UA_Districts_9 = new L.geoJson(json_DRDSI_UA_Districts_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DRDSI_UA_Districts_3',
-            layerName: 'layer_DRDSI_UA_Districts_3',
-            pane: 'pane_DRDSI_UA_Districts_3',
-            onEachFeature: pop_DRDSI_UA_Districts_3,
-            style: style_DRDSI_UA_Districts_3_0,
+            dataVar: 'json_DRDSI_UA_Districts_9',
+            layerName: 'layer_DRDSI_UA_Districts_9',
+            pane: 'pane_DRDSI_UA_Districts_9',
+            onEachFeature: pop_DRDSI_UA_Districts_9,
+            style: style_DRDSI_UA_Districts_9_0,
         });
-        bounds_group.addLayer(layer_DRDSI_UA_Districts_3);
-        function pop_DRDSI_UA_Village_Councils_4(feature, layer) {
+        bounds_group.addLayer(layer_DRDSI_UA_Districts_9);
+        function pop_DRDSI_UA_Village_Councils_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">ID</th>\
@@ -259,9 +719,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DRDSI_UA_Village_Councils_4_0() {
+        function style_DRDSI_UA_Village_Councils_10_0() {
             return {
-                pane: 'pane_DRDSI_UA_Village_Councils_4',
+                pane: 'pane_DRDSI_UA_Village_Councils_10',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -274,24 +734,25 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_DRDSI_UA_Village_Councils_4');
-        map.getPane('pane_DRDSI_UA_Village_Councils_4').style.zIndex = 404;
-        map.getPane('pane_DRDSI_UA_Village_Councils_4').style['mix-blend-mode'] = 'normal';
-        var layer_DRDSI_UA_Village_Councils_4 = new L.geoJson(json_DRDSI_UA_Village_Councils_4, {
+        map.createPane('pane_DRDSI_UA_Village_Councils_10');
+        map.getPane('pane_DRDSI_UA_Village_Councils_10').style.zIndex = 410;
+        map.getPane('pane_DRDSI_UA_Village_Councils_10').style['mix-blend-mode'] = 'normal';
+        var layer_DRDSI_UA_Village_Councils_10 = new L.geoJson(json_DRDSI_UA_Village_Councils_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DRDSI_UA_Village_Councils_4',
-            layerName: 'layer_DRDSI_UA_Village_Councils_4',
-            pane: 'pane_DRDSI_UA_Village_Councils_4',
-            onEachFeature: pop_DRDSI_UA_Village_Councils_4,
-            style: style_DRDSI_UA_Village_Councils_4_0,
+            dataVar: 'json_DRDSI_UA_Village_Councils_10',
+            layerName: 'layer_DRDSI_UA_Village_Councils_10',
+            pane: 'pane_DRDSI_UA_Village_Councils_10',
+            onEachFeature: pop_DRDSI_UA_Village_Councils_10,
+            style: style_DRDSI_UA_Village_Councils_10_0,
         });
-        bounds_group.addLayer(layer_DRDSI_UA_Village_Councils_4);
+        bounds_group.addLayer(layer_DRDSI_UA_Village_Councils_10);
+        map.addLayer(layer_DRDSI_UA_Village_Councils_10);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/DRDSI_UA_Village_Councils_4.png" /> DRDSI_UA_Village_Councils': layer_DRDSI_UA_Village_Councils_4,'<img src="legend/DRDSI_UA_Districts_3.png" /> DRDSI_UA_Districts': layer_DRDSI_UA_Districts_3,'<img src="legend/Regionnew_2.png" /> Region (new)': layer_Regionnew_2,'<img src="legend/TerritorialCommunitynew_1.png" /> Territorial Community (new)': layer_TerritorialCommunitynew_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/DRDSI_UA_Village_Councils_10.png" /> DRDSI_UA_Village_Councils': layer_DRDSI_UA_Village_Councils_10,'<img src="legend/DRDSI_UA_Districts_9.png" /> DRDSI_UA_Districts': layer_DRDSI_UA_Districts_9,'<img src="legend/TerritorialCommunitynew_8.png" /> Territorial Community (new)': layer_TerritorialCommunitynew_8,'Territorial Community (new) square<br /><table><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewsquare_7_01190.png" /></td><td>0 - 119</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewsquare_7_1192741.png" /></td><td>119 - 274</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewsquare_7_2743032.png" /></td><td>274 - 303</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewsquare_7_3035633.png" /></td><td>303 - 563</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewsquare_7_5639954.png" /></td><td>563 - 995</td></tr></table>': layer_TerritorialCommunitynewsquare_7,'Territorial Community (new) population<br /><table><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewpopulation_6_050630.png" /></td><td>0 - 5063</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewpopulation_6_506380561.png" /></td><td>5063 - 8056</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewpopulation_6_8056137452.png" /></td><td>8056 - 13745</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewpopulation_6_13745244513.png" /></td><td>13745 - 24451</td></tr><tr><td style="text-align: center;"><img src="legend/TerritorialCommunitynewpopulation_6_24451707314.png" /></td><td>24451 - 70731</td></tr></table>': layer_TerritorialCommunitynewpopulation_6,'<img src="legend/Regionnew_5.png" /> Region (new)': layer_Regionnew_5,'Region (new) square<br /><table><tr><td style="text-align: center;"><img src="legend/Regionnewsquare_4_323739910.png" /></td><td>3237 - 3991</td></tr><tr><td style="text-align: center;"><img src="legend/Regionnewsquare_4_399144081.png" /></td><td>3991 - 4408</td></tr><tr><td style="text-align: center;"><img src="legend/Regionnewsquare_4_440844902.png" /></td><td>4408 - 4490</td></tr></table>': layer_Regionnewsquare_4,'Region (new) population<br /><table><tr><td style="text-align: center;"><img src="legend/Regionnewpopulation_3_1479731825640.png" /></td><td>147973 - 182564</td></tr><tr><td style="text-align: center;"><img src="legend/Regionnewpopulation_3_1825642029901.png" /></td><td>182564 - 202990</td></tr><tr><td style="text-align: center;"><img src="legend/Regionnewpopulation_3_2029902092492.png" /></td><td>202990 - 209249</td></tr></table>': layer_Regionnewpopulation_3,"Google Satellite Hybrid": layer_GoogleSatelliteHybrid_2,"Google Maps": layer_GoogleMaps_1,"OpenStreetMap": layer_OpenStreetMap_0,}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
-            layer: layer_TerritorialCommunitynew_1,
+            layer: layer_TerritorialCommunitynew_8,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'ADMIN_2'}));
