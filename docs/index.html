@@ -24,6 +24,7 @@
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -125,9 +126,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(87,235,255,1.0)',
                 interactive: true,
             }
@@ -140,9 +141,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(44,135,255,1.0)',
                 interactive: true,
             }
@@ -155,9 +156,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(0,34,255,1.0)',
                 interactive: true,
             }
@@ -211,9 +212,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,215,238,1.0)',
                 interactive: true,
             }
@@ -226,9 +227,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(218,108,121,1.0)',
                 interactive: true,
             }
@@ -241,9 +242,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(180,0,3,1.0)',
                 interactive: true,
             }
@@ -265,19 +266,24 @@
         function pop_Regionnew_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ADMIN_1</th>\
+                        <td>' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ADMIN_2</th>\
+                        <td>' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">square</th>\
+                        <td>' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">population</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -291,9 +297,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(131,183,255,1.0)',
                 interactive: true,
             }
@@ -311,7 +317,6 @@
             style: style_Regionnew_5_0,
         });
         bounds_group.addLayer(layer_Regionnew_5);
-        map.addLayer(layer_Regionnew_5);
         function pop_TerritorialCommunitynewpopulation_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -359,9 +364,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(206,228,255,1.0)',
                 interactive: true,
             }
@@ -374,9 +379,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(155,189,255,1.0)',
                 interactive: true,
             }
@@ -389,9 +394,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(103,150,255,1.0)',
                 interactive: true,
             }
@@ -404,9 +409,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(51,111,255,1.0)',
                 interactive: true,
             }
@@ -419,9 +424,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(0,72,255,1.0)',
                 interactive: true,
             }
@@ -487,9 +492,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,255,255,1.0)',
                 interactive: true,
             }
@@ -502,9 +507,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,191,191,1.0)',
                 interactive: true,
             }
@@ -517,9 +522,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,128,128,1.0)',
                 interactive: true,
             }
@@ -532,9 +537,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,64,64,1.0)',
                 interactive: true,
             }
@@ -547,9 +552,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,0,0,1.0)',
                 interactive: true,
             }
@@ -571,28 +576,36 @@
         function pop_TerritorialCommunitynew_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ADMIN_1</th>\
+                        <td>' + (feature.properties['ADMIN_1'] !== null ? autolinker.link(feature.properties['ADMIN_1'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ADMIN_2</th>\
+                        <td>' + (feature.properties['ADMIN_2'] !== null ? autolinker.link(feature.properties['ADMIN_2'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ADMIN_3'] !== null ? autolinker.link(feature.properties['ADMIN_3'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">ADMIN_3</th>\
+                        <td>' + (feature.properties['ADMIN_3'] !== null ? autolinker.link(feature.properties['ADMIN_3'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">TYPE</th>\
+                        <td>' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['KOATUU_old'] !== null ? autolinker.link(feature.properties['KOATUU_old'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">KOATUU_old</th>\
+                        <td>' + (feature.properties['KOATUU_old'] !== null ? autolinker.link(feature.properties['KOATUU_old'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">square</th>\
+                        <td>' + (feature.properties['square'] !== null ? autolinker.link(feature.properties['square'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">population</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -602,28 +615,41 @@
             return {
                 pane: 'pane_TerritorialCommunitynew_8',
                 opacity: 1,
+                color: 'rgba(77,175,74,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        function style_TerritorialCommunitynew_8_1() {
+            return {
+                pane: 'pane_TerritorialCommunitynew_8',
+                opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(243,166,178,1.0)',
+                fillOpacity: 0.5,
+                fillColor: 'rgba(255,158,23,1.0)',
                 interactive: true,
             }
         }
         map.createPane('pane_TerritorialCommunitynew_8');
         map.getPane('pane_TerritorialCommunitynew_8').style.zIndex = 408;
         map.getPane('pane_TerritorialCommunitynew_8').style['mix-blend-mode'] = 'normal';
-        var layer_TerritorialCommunitynew_8 = new L.geoJson(json_TerritorialCommunitynew_8, {
+        var layer_TerritorialCommunitynew_8 = new L.geoJson.multiStyle(json_TerritorialCommunitynew_8, {
             attribution: '',
             interactive: true,
             dataVar: 'json_TerritorialCommunitynew_8',
             layerName: 'layer_TerritorialCommunitynew_8',
             pane: 'pane_TerritorialCommunitynew_8',
             onEachFeature: pop_TerritorialCommunitynew_8,
-            style: style_TerritorialCommunitynew_8_0,
+            styles: [style_TerritorialCommunitynew_8_0,style_TerritorialCommunitynew_8_1,]
         });
         bounds_group.addLayer(layer_TerritorialCommunitynew_8);
         map.addLayer(layer_TerritorialCommunitynew_8);
@@ -661,9 +687,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(229,182,54,1.0)',
                 interactive: true,
             }
@@ -727,9 +753,9 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.5, 
                 fill: true,
-                fillOpacity: 1,
+                fillOpacity: 0.5,
                 fillColor: 'rgba(255,158,23,1.0)',
                 interactive: true,
             }
